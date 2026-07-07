@@ -33,6 +33,16 @@ Playlist.prototype.listSongs = function() { // Prints to the console the name of
   console.log("Songs:", this.songs.join(", "));
 };
 
+// New method that stops/pauses the playlist
+Playlist.prototype.stopPlaying = function() {
+    if(this.currentSong != null){
+        this.currentSong = null;
+        console.log("Playlist stopped!")
+    }
+    else{
+        console.log("You're not playing anything.")
+    }
+}
 
 let myMix = new Playlist("My Chill Mix");
 myMix.addSong("Lofi Study");
@@ -42,3 +52,10 @@ myMix.playFirst();
 myMix.skipSong();
 myMix.listSongs();
   
+
+/*
+Suggestions: 
+Improvement: 
+One improvement I suggest is in the skipSong method, where I would reccomend pushing the skipped song to the songs array so that the playlist loops. 
+I think this would be beneificial because it would preserve the playlist, instead of gradually deleting it as it is being listened to. 
+*/
